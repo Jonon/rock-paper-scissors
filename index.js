@@ -1,3 +1,5 @@
+let humanScore = 0;
+
 let gameChoices = ["rock", "paper", "scissors"];
 
 function getComputerChoice() {
