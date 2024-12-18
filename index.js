@@ -13,6 +13,8 @@ function getComputerChoice() {
 function getHumanChoice() {
 	// Get a prompt and choose either Rock, paper oor scissors
 	let choice = prompt("Chose Rock, Paper or Scissors");
+	// Make choice case-insensitive
+	choice = choice.toLocaleLowerCase();
 	// Check if the choice is incorrect
 	if (
 		choice != gameChoices[0] &&
