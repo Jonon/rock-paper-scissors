@@ -1,4 +1,5 @@
 let humanScore = 0;
+let computerScore = 0;
 
 let gameChoices = ["rock", "paper", "scissors"];
 
