@@ -7,8 +7,6 @@ function getComputerChoice() {
 	// Randomly retrieves a number between 0-2
 	let choice = Math.round(Math.random() * 2);
 	// Returns a string from the GameChoices array with a specific index from the choice variable
-	console.log(gameChoices[choice]);
-
 	return gameChoices[choice];
 }
 
@@ -25,7 +23,6 @@ function getHumanChoice() {
 	) {
 		console.log("This is incorrect");
 	} else {
-		console.log(choice);
 		// return your choice
 		return choice;
 	}
