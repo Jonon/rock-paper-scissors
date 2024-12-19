@@ -39,20 +39,26 @@ function playRound(humanChoice, computerChoice) {
 	} else if (humanChoice == "rock") {
 		if (computerChoice == "paper") {
 			message = "You lose! Paper beats Rock.";
+			computerScore++;
 		} else if (computerChoice == "scissors") {
 			message = "You win! Rock beats Scissors.";
+			humanScore++;
 		}
 	} else if (humanChoice == "paper") {
 		if (computerChoice == "rock") {
 			message = "You win! Paper beats Rock.";
+			humanScore++;
 		} else if (computerChoice == "scissors") {
 			message = "You lose! Scissors beats Paper.";
+			computerScore++;
 		}
 	} else if (humanChoice == "scissors") {
 		if (computerChoice == "rock") {
 			message = "You lose! Rock beats scissors.";
+			computerScore++;
 		} else if (computerChoice == "paper") {
 			message = "You win! Scissors beats Paper.";
+			humanScore++;
 		}
 	}
 	console.log(message);
