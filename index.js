@@ -1,6 +1,3 @@
-let humanScore = 0;
-let computerScore = 0;
-
 let gameChoices = ["rock", "paper", "scissors"];
 
 function getComputerChoice() {
@@ -28,40 +25,73 @@ function getHumanChoice() {
 	}
 }
 
-function playRound(humanChoice, computerChoice) {
-	let message = "";
-	// rules
-	if (humanChoice === computerChoice) {
-		message = "It's a tie";
-	} else if (humanChoice == "rock") {
-		if (computerChoice == "paper") {
-			message = "You lose! Paper beats Rock.";
-			computerScore++;
-		} else if (computerChoice == "scissors") {
-			message = "You win! Rock beats Scissors.";
-			humanScore++;
+function playGame() {
+	let humanScore = 0;
+	let computerScore = 0;
+
+	function playRound(humanChoice, computerChoice) {
+		let message = "";
+		// rules
+		if (humanChoice === computerChoice) {
+			message = "It's a tie";
+		} else if (humanChoice == "rock") {
+			if (computerChoice == "paper") {
+				message = "You lose! Paper beats Rock.";
+				computerScore++;
+			} else if (computerChoice == "scissors") {
+				message = "You win! Rock beats Scissors.";
+				humanScore++;
+			}
+		} else if (humanChoice == "paper") {
+			if (computerChoice == "rock") {
+				message = "You win! Paper beats Rock.";
+				humanScore++;
+			} else if (computerChoice == "scissors") {
+				message = "You lose! Scissors beats Paper.";
+				computerScore++;
+			}
+		} else if (humanChoice == "scissors") {
+			if (computerChoice == "rock") {
+				message = "You lose! Rock beats scissors.";
+				computerScore++;
+			} else if (computerChoice == "paper") {
+				message = "You win! Scissors beats Paper.";
+				humanScore++;
+			}
 		}
-	} else if (humanChoice == "paper") {
-		if (computerChoice == "rock") {
-			message = "You win! Paper beats Rock.";
-			humanScore++;
-		} else if (computerChoice == "scissors") {
-			message = "You lose! Scissors beats Paper.";
-			computerScore++;
-		}
-	} else if (humanChoice == "scissors") {
-		if (computerChoice == "rock") {
-			message = "You lose! Rock beats scissors.";
-			computerScore++;
-		} else if (computerChoice == "paper") {
-			message = "You win! Scissors beats Paper.";
-			humanScore++;
-		}
+		console.log(message);
 	}
+
+	for (let i = 0; i < 5; i++) {
+		playRound(getHumanChoice(), getComputerChoice());
+	}
+
+	let message = "";
+
+	if (humanScore > computerScore) {
+		message =
+			"Congratulations you won! " +
+			"Your score: " +
+			humanScore +
+			" Computer score: " +
+			computerScore;
+	} else if (humanScore < computerScore) {
+		message =
+			"You lost. " +
+			"Your score: " +
+			humanScore +
+			" Computer score: " +
+			computerScore;
+	} else {
+		message =
+			"It's a tie. " +
+			"Your score: " +
+			humanScore +
+			" Computer score: " +
+			computerScore;
+	}
+
 	console.log(message);
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-playRound(humanSelection, computerSelection);
+playGame();
