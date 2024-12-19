@@ -7,6 +7,8 @@ function getComputerChoice() {
 	// Randomly retrieves a number between 0-2
 	let choice = Math.round(Math.random() * 2);
 	// Returns a string from the GameChoices array with a specific index from the choice variable
+	console.log(gameChoices[choice]);
+
 	return gameChoices[choice];
 }
 
@@ -28,3 +30,35 @@ function getHumanChoice() {
 		return choice;
 	}
 }
+
+function playRound(humanChoice, computerChoice) {
+	let message = "";
+	// rules
+	if (humanChoice === computerChoice) {
+		message = "It's a tie";
+	} else if (humanChoice == "rock") {
+		if (computerChoice == "paper") {
+			message = "You lose! Paper beats Rock.";
+		} else if (computerChoice == "scissors") {
+			message = "You win! Rock beats Scissors.";
+		}
+	} else if (humanChoice == "paper") {
+		if (computerChoice == "rock") {
+			message = "You win! Paper beats Rock.";
+		} else if (computerChoice == "scissors") {
+			message = "You lose! Scissors beats Paper.";
+		}
+	} else if (humanChoice == "scissors") {
+		if (computerChoice == "rock") {
+			message = "You lose! Rock beats scissors.";
+		} else if (computerChoice == "paper") {
+			message = "You win! Scissors beats Paper.";
+		}
+	}
+	console.log(message);
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
