@@ -62,10 +62,6 @@ function playGame() {
 		console.log(message);
 	}
 
-	for (let i = 0; i < 5; i++) {
-		playRound(getHumanChoice(), getComputerChoice());
-	}
-
 	let message = "";
 
 	if (humanScore > computerScore) {
