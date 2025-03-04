@@ -62,6 +62,13 @@ function playGame() {
 		console.log(message);
 	}
 
+	const buttons = document.querySelectorAll("button");
+	buttons.forEach((button) => {
+		button.addEventListener("click", (e) =>
+			playRound(e.target.innerText.toLowerCase(), getComputerChoice())
+		);
+	});
+
 	let message = "";
 
 	if (humanScore > computerScore) {
