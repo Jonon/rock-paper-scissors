@@ -64,8 +64,8 @@ function playGame() {
 				humanScore++;
 			}
 		}
-		console.log(message);
 		textMessage.textContent = message;
+		displayScore(humanScore, computerScore);
 	}
 
 	const buttons = document.querySelectorAll("button");
@@ -75,32 +75,35 @@ function playGame() {
 		);
 	});
 
-	let message = "";
+	function displayScore(humanScore, computerScore) {
+		let message = "";
+		if (humanScore === 5 || computerScore === 5) {
+			if (humanScore > computerScore) {
+				message =
+					"Congratulations you won! " +
+					"Your score: " +
+					humanScore +
+					" Computer score: " +
+					computerScore;
+			} else if (humanScore < computerScore) {
+				message =
+					"You lost. " +
+					"Your score: " +
+					humanScore +
+					" Computer score: " +
+					computerScore;
+			} else {
+				message =
+					"It's a tie. " +
+					"Your score: " +
+					humanScore +
+					" Computer score: " +
+					computerScore;
+			}
 
-	if (humanScore > computerScore) {
-		message =
-			"Congratulations you won! " +
-			"Your score: " +
-			humanScore +
-			" Computer score: " +
-			computerScore;
-	} else if (humanScore < computerScore) {
-		message =
-			"You lost. " +
-			"Your score: " +
-			humanScore +
-			" Computer score: " +
-			computerScore;
-	} else {
-		message =
-			"It's a tie. " +
-			"Your score: " +
-			humanScore +
-			" Computer score: " +
-			computerScore;
+			textMessage.textContent = message;
+		}
 	}
-
-	console.log(message);
 }
 
 playGame();
