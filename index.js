@@ -29,8 +29,13 @@ function playGame() {
 	let humanScore = 0;
 	let computerScore = 0;
 
+	const section = document.querySelector("body");
+	const textMessage = document.createElement("div");
+
 	function playRound(humanChoice, computerChoice) {
 		let message = "";
+		textMessage.textContent = message;
+		section.appendChild(textMessage);
 		// rules
 		if (humanChoice === computerChoice) {
 			message = "It's a tie";
@@ -60,6 +65,7 @@ function playGame() {
 			}
 		}
 		console.log(message);
+		textMessage.textContent = message;
 	}
 
 	const buttons = document.querySelectorAll("button");
