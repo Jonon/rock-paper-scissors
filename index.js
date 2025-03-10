@@ -1,5 +1,8 @@
 let gameChoices = ["rock", "paper", "scissors"];
 
+const section = document.querySelector("body");
+const textMessage = document.createElement("div");
+
 function getComputerChoice() {
 	// Randomly retrieves a number between 0-2
 	let choice = Math.round(Math.random() * 2);
@@ -28,9 +31,6 @@ function getHumanChoice() {
 function playGame() {
 	let humanScore = 0;
 	let computerScore = 0;
-
-	const section = document.querySelector("body");
-	const textMessage = document.createElement("div");
 
 	function playRound(humanChoice, computerChoice) {
 		let message = "";
