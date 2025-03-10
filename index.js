@@ -101,6 +101,9 @@ function playGame() {
 					computerScore;
 			}
 
+			buttons.forEach((button) => {
+				button.disabled = true;
+			});
 			textMessage.textContent = message;
 		}
 	}
