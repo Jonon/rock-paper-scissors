@@ -1,0 +1,28 @@
+.btn {
+	border: none;
+}
+
+.rock {
+	background: url("/icons/rock.png");
+}
+
+.paper {
+	background: url("./icons/paper.png");
+}
+
+.scissors {
+	background: url("./icons/scissor.png");
+}
+
+.icon {
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 100px;
+	height: 100px;
+	background-position: center;
+}
+
+.icon:hover {
+	background-color: rgba(121, 106, 106, 0.1);
+}
