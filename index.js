@@ -103,6 +103,7 @@ function playGame() {
 
 			buttons.forEach((button) => {
 				button.disabled = true;
+				button.style.backgroundColor = `rgb(255, 255, 255)`;
 			});
 			textMessage.textContent = message;
 		}
