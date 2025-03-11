@@ -1,6 +1,6 @@
 let gameChoices = ["rock", "paper", "scissors"];
 
-const section = document.querySelector("body");
+const section = document.querySelector(".wrapper");
 const textMessage = document.createElement("div");
 
 function getComputerChoice() {
