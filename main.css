@@ -18,7 +18,7 @@
 }
 
 .rock {
-	background: url("/icons/rock.png");
+	background: url("./icons/rock.png");
 }
 
 .paper {
